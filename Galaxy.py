@@ -17,6 +17,9 @@ class Galaxy:
     def __str__(self):
         return f"Galaxy {self.name}"
     
+    def descr(self):
+        return f"Name: {self.name}\nHas a bar? {self.bar}\nType: {self.type}"
+    
     def show(self):
         img = Image.open(self.path)
         img.show()

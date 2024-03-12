@@ -1,5 +1,6 @@
 from simple_term_menu import TerminalMenu
 import time
+import random
 from Galaxy import Galaxy
 import pickling as pck
 
@@ -24,11 +25,18 @@ except:
 # FUNCTIONS
 
 def clear_screen():
-    print("\033[H\033[J", end="")
+    print("\033[H\033[J", end = "")
 
 def start_quiz():
-    for g in galaxies:
-        g.show()
+    while True:
+        clear_screen()
+        x = galaxies[int(random.random() * len(galaxies))]
+        x.show()
+        _ = input("Press enter to show the solution\n")
+        print(x.descr())
+        print()
+        q = input("Press enter to go next, q to quit\n")
+        if q == "q": return 0 
 
 def add_gal():
     clear_screen()
